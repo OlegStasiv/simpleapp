@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
                             if: lambda { |m| m.password.present? }
 
   has_secure_password
+  def generate_auth_token
+    self.token = SecureRandom.uuid.gsub(/\-/,'')
+  end
 end
