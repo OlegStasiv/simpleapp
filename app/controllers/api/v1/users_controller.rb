@@ -16,9 +16,28 @@ def create
   def show
     @user = User.find(params[:id])
   end
-  
+  end
 
-end
+
+  def login
+    @user = User.where(email: params[:email]).first
+    @user&&@user.authenticate(password: params[:password])
+
+    if @user
+
+      @user.token = @user.generate_auth_token
+
+
+      if @user.save
+        render json: {data:{token: @user.token}}, status: 200
+      else
+        render json: {error: "login error"}, status: 422
+      end
+    else
+      render json: {error: "User not found"}, status: 401
+    end
+  end
+
   private
 def user_params
   params.require(:user).permit(:name, :email, :password, :password_confirmation)
