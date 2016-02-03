@@ -6,6 +6,7 @@ def create
   @user = User.create(user_params)
 
   if @user.save
+
     render json: {user: @user}, status: 200
   else
     render json: {error: "can't registered"}, status: 500
@@ -15,6 +16,7 @@ def create
   def show
     @user = User.find(params[:id])
   end
+  
 
 end
   private
