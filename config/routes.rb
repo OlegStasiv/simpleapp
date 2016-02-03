@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   get 'users/new'
 
   get 'users/new'
@@ -10,7 +11,14 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about', as: :about
   get 'help' => 'static_pages#help', as: :help
 
-  get 'signup' => 'users#new', as: :signup
+  get 'signup' => 'users#new'
+  get 'signin' => 'sessions#new'
+#  delete 'signout' => 'sessions#destroy'
+  get 'signout' => 'sessions#destroy', as: :destroy
+  #get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #match '/signup',  to: 'users#new',            via: 'get'
+  #match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   namespace :api do
     namespace :v1 do
