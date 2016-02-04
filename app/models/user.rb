@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, unless: Proc.new { |user| user.password.nil? }
 
   has_secure_password
-
+#comment
   def generate_auth_token
     self.token = SecureRandom.uuid.gsub(/\-/,'')
   end
