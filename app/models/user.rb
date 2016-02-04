@@ -7,9 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
   validates :password, length: { minimum: 6 }, unless: Proc.new { |user| user.password.nil? }
   validates :password_confirmation, presence: true, unless: Proc.new { |user| user.password.nil? }
-  #validates_confirmation_of :password,
-                            #if: lambda { |m| m.password.present? }
-  #test
+
   has_secure_password
 
   def generate_auth_token
