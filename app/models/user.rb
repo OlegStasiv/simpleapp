@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 #comment
+# Oleg comment
   def generate_auth_token
     self.token = SecureRandom.uuid.gsub(/\-/,'')
   end
