@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2296f164-a5a8-420e-a703-7d091eebe5fa" name="Default" comment="Friended by fully implemented">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
+    <list default="true" id="2296f164-a5a8-420e-a703-7d091eebe5fa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/friendship.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="simple_simple.iws" />
@@ -792,7 +792,19 @@
       <option name="project" value="LOCAL" />
       <updated>1454677016866</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Friended by fully implemented">
+      <created>1454679037170</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1454679037170</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Friended by fully implemented">
+      <created>1454679055144</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1454679055144</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
