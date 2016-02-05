@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get 'users/new'
@@ -10,6 +15,7 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact', as: :contact
   get 'about' => 'static_pages#about', as: :about
   get 'help' => 'static_pages#help', as: :help
+
 
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
@@ -26,6 +32,7 @@ Rails.application.routes.draw do
       post 'users/login'
     end
   end
+  resources :friendships
 
 
   # The priority is based upon order of creation: first created -> highest priority.

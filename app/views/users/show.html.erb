@@ -3,9 +3,23 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <br><%= gravatar_for @user %>
+        <br><%= @user.name %>
+        <ul><br>
+          <br><b><h1>Friends list</h1></b>
+          <% @user.friendships.each do |friendship| %><br />
+              <%= friendship.friend.name %>
+              <%= link_to "remove", friendships_destroy_url, method: :delete %>
+          <%end%>
+          </ul>
       </h1>
+      <br><b><h1>Friended by users</h1></b>
+      <ul>
+        <% for user in @user.inverse_friends %>
+            <li><%=h user.name %></li>
+        <% end %>
+      </ul>
+
     </section>
   </aside>
 </div>
