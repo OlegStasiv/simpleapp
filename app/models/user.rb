@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, unless: Proc.new { |user| user.password.nil? }
 
   has_secure_password
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "//avatars/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 #comment
 # Oleg comment
   def generate_auth_token

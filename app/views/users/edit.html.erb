@@ -1,0 +1,16 @@
+<%= form_for @user, html: { multipart: true } do |form| %>
+
+    <br>
+    <br>
+    <%= form.label :name, "Your name"%>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :email, "Email" %>
+    <%= form.text_field :email %>
+    <br>
+    <%= form.label :avatar, "Profile picture" %>
+    <%= form.file_field :avatar %>
+    <%= image_tag @user.avatar.url %>
+    <br>
+    <%= form.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

@@ -7,7 +7,7 @@
         <p>
           <% if current_user.name != user.name %>
           <br><strong><%=h user.name %></strong>
-          <%= link_to "Add Friend", friendships_create_path(:friend_id=> user), :method => :post %>
+          <%= link_to "Add Friend", friendships_create_path(:friend_id=> user) %>
         <div class="clear"></div>
         </p>
           <% end %>
