@@ -1,4 +1,4 @@
-<%= form_for @user, html: { multipart: true } do |form| %>
+<%= form_for current_user, html: { multipart: true } do |form| %>
 
     <br>
     <br>
@@ -10,7 +10,6 @@
     <br>
     <%= form.label :avatar, "Profile picture" %>
     <%= form.file_field :avatar %>
-    <%= image_tag @user.avatar.url %>
     <br>
     <%= form.submit "Save changes", class: "btn btn-primary" %>
 <% end %>
