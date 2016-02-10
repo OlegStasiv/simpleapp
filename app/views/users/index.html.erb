@@ -8,6 +8,8 @@
           <% if current_user.name != user.name %>
           <br><strong><%=h user.name %></strong>
           <%= link_to "Add Friend", friendships_create_path(:friend_id=> user) %>
+              <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
+              <%= link_to "INBOX", mailbox_inbox_path %>
         <div class="clear"></div>
         </p>
           <% end %>

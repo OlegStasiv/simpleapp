@@ -15,6 +15,15 @@ class User < ActiveRecord::Base
   has_secure_password
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "//avatars/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  acts_as_messageable
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
 #comment
 # Oleg comment
   def generate_auth_token
