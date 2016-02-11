@@ -13,8 +13,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, unless: Proc.new { |user| user.password.nil? }
 
   has_secure_password
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "//avatars/missing.png"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  has_attached_file :avatar,:default_url =>
+      "/images/:style/missing.png",
+                    styles: { small: "64x64", med: "100x100", large: "200x200" }
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   acts_as_messageable
 
   def mailboxer_name

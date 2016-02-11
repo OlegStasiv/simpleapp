@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  patch "users/update" => "users#update", :as => "users/update"
   root 'static_pages#home'
 
   get 'contact' => 'static_pages#contact', as: :contact

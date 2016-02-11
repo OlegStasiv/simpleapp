@@ -3,10 +3,10 @@
   <aside class="span4">
     <section>
       <h1>
-        <br><%= image_tag @user.avatar.url(:thumb) %>
-        <br><%= @user.name %>
+        <br><%= image_tag current_user.avatar.url(:large) %>
+        <br><b><%= @user.name %></b>
         <%= link_to "Edit profile", edit_user_path %>
-          <br><b><h1>Friends list</h1></b>
+          <br><br><b><h1>Friends list</h1></b>
           <% @user.friendships.each do |friendship| %><br />
               <%= friendship.friend.name %>
               <%= link_to "remove", friendships_destroy_url(friendship), :method => :delete %>

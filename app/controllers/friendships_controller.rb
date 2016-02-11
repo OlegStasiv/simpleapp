@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
     redirect_to users_path
   end
   def show
-    redirect_to users_path
+    render 'users/show'
   end
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])

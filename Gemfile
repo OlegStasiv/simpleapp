@@ -48,4 +48,5 @@ group :development do
 end
 gem 'paperclip'
 gem 'mailboxer'
+gem 'simple_form'
 
